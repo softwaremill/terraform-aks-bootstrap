@@ -19,7 +19,7 @@ module "aks" {
   enable_role_based_access_control = true
   rbac_aad_admin_group_object_ids  = var.use_cluster_admins_group ? [data.azuread_group.aks_cluster_admins[0].id] : null
   rbac_aad_managed                 = true
-  private_cluster_enabled          = false
+  private_cluster_enabled          = var.private_cluster_enabled
   enable_http_application_routing  = true
   enable_azure_policy              = true
   enable_auto_scaling              = var.enable_auto_scaling

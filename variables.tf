@@ -121,3 +121,8 @@ variable "admins_group_name" {
   type        = string
   default     = "AKS-cluster-admins"
 }
+
+variable "private_cluster_enabled" {
+  description = "Create private cluster"
+  default     = true
+}
