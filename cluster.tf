@@ -33,13 +33,9 @@ module "aks" {
   agents_availability_zones        = ["1", "2", "3"]
   agents_type                      = "VirtualMachineScaleSets"
 
-  agents_labels = {
-    "nodepool" : "defaultnodepool"
-  }
+  agents_labels = var.agents_labels
 
-  agents_tags = {
-    "Agent" : "defaultnodepoolagent"
-  }
+  agents_tags = var.agents_tags
 
   network_policy                 = "azure"
   net_profile_dns_service_ip     = var.net_profile_dns_service_ip
