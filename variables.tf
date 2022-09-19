@@ -126,3 +126,19 @@ variable "private_cluster_enabled" {
   description = "Create private cluster"
   default     = true
 }
+
+variable "agents_labels" {
+  description = "(Optional) A map of Kubernetes labels which should be applied to nodes in the Default Node Pool. Changing this forces a new resource to be created."
+  type        = map(string)
+  default = {
+    "nodepool" : "defaultnodepool"
+  }
+}
+
+variable "agents_tags" {
+  description = "(Optional) A mapping of tags to assign to the Node Pool."
+  type        = map(string)
+  default = {
+    "Agent" : "defaultnodepoolagent"
+  }
+}
