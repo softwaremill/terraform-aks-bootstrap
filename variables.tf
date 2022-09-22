@@ -142,3 +142,24 @@ variable "agents_tags" {
     "Agent" : "defaultnodepoolagent"
   }
 }
+
+variable "enable_host_encryption" {
+  description = "Enable Host Encryption for default node pool. Encryption at host feature must be enabled on the subscription: https://docs.microsoft.com/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli"
+  type        = bool
+  default     = false
+}
+
+variable "node_pools" {
+  description = "Manages Node Pools within a Kubernetes Cluster"
+  type = map(object({
+    vm_size             = string
+    enable_auto_scaling = bool
+    node_count          = optional(number)
+    min_count           = optional(number)
+    max_count           = optional(number)
+    node_count          = optional(number)
+    node_labels         = optional(map(string))
+    node_tags           = optional(map(string))
+  }))
+  default = {}
+}
