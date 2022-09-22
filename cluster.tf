@@ -55,7 +55,7 @@ resource "azurerm_role_assignment" "aks_to_acr" {
   principal_id         = module.aks.kubelet_identity[0].object_id
 }
 
-resource "azurerm_kubernetes_cluster_node_pool" "queues" {
+resource "azurerm_kubernetes_cluster_node_pool" "node_pools" {
   for_each              = var.node_pools
   name                  = each.key
   kubernetes_cluster_id = module.aks.aks_id
