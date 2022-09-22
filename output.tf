@@ -1,4 +1,5 @@
 output "cluster_name" {
+  description = "The aurerm_kubernetes-cluster's name."
   value = var.cluster_name
 }
 
