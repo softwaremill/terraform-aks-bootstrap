@@ -63,14 +63,14 @@ variable "agents_size" {
 
 variable "kubernetes_version" {
   type        = string
-  description = "Specify which Kubernetes release to use. The default used is the latest Kubernetes version available in the region"
-  default     = "1.19.3"
+  description = "Specify which Kubernetes release to use."
+  default     = "1.24.3"
 }
 
 variable "orchestrator_version" {
   type        = string
-  description = "Specify which Kubernetes release to use for the orchestration layer. The default used is the latest Kubernetes version available in the region"
-  default     = "1.19.3"
+  description = "Specify which Kubernetes release to use for the orchestration layer."
+  default     = "1.24.3"
 }
 
 variable "registry_sku_tier" {
