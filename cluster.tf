@@ -33,6 +33,7 @@ module "aks" {
   agents_labels = var.agents_labels
   agents_tags   = var.agents_tags
 
+
   network_policy                 = "azure"
   net_profile_dns_service_ip     = var.net_profile_dns_service_ip
   net_profile_docker_bridge_cidr = var.net_profile_docker_bridge_cidr
