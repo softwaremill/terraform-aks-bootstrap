@@ -1,7 +1,3 @@
-terraform {
-  experiments = [module_variable_optional_attrs]
-}
-
 resource "azurerm_resource_group" "cluster" {
   name     = var.resource_group_name
   location = "West Europe"
