@@ -60,7 +60,7 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 2.28.1 |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.23.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.24.0 |
 
 ## Modules
 
