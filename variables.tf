@@ -63,14 +63,14 @@ variable "agents_size" {
 
 variable "kubernetes_version" {
   type        = string
-  description = "Specify which Kubernetes release to use. The default used is the latest Kubernetes version available in the region"
-  default     = "1.19.3"
+  description = "Specify which Kubernetes release to use."
+  default     = "1.24.3"
 }
 
 variable "orchestrator_version" {
   type        = string
-  description = "Specify which Kubernetes release to use for the orchestration layer. The default used is the latest Kubernetes version available in the region"
-  default     = "1.19.3"
+  description = "Specify which Kubernetes release to use for the orchestration layer."
+  default     = "1.24.3"
 }
 
 variable "registry_sku_tier" {
@@ -141,4 +141,25 @@ variable "agents_tags" {
   default = {
     "Agent" : "defaultnodepoolagent"
   }
+}
+
+variable "enable_host_encryption" {
+  description = "Enable Host Encryption for default node pool. Encryption at host feature must be enabled on the subscription: https://docs.microsoft.com/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli"
+  type        = bool
+  default     = false
+}
+
+variable "node_pools" {
+  description = "Manages Node Pools within a Kubernetes Cluster"
+  type = map(object({
+    vm_size             = string
+    enable_auto_scaling = bool
+    node_count          = optional(number)
+    min_count           = optional(number)
+    max_count           = optional(number)
+    node_count          = optional(number)
+    node_labels         = optional(map(string))
+    node_tags           = optional(map(string))
+  }))
+  default = {}
 }
