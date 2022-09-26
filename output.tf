@@ -10,11 +10,13 @@ output "cluster_id" {
 
 output "host" {
   description = "The host in the azurerm_kubernetes_cluster's kube_config block. The Kubernetes cluster server host."
+  sensitive   = true
   value       = module.aks.host
 }
 
 output "kubernetes_ca_certificate" {
   description = "The cluster_ca_certificate in the azurerm_kubernetes_cluster's kube_admin_config block. Base64 encoded public CA certificate used as the root of trust for the Kubernetes cluster."
+  sensitive   = true
   value       = module.aks.admin_cluster_ca_certificate
 }
 
