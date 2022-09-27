@@ -29,19 +29,19 @@ output "admin_cluster_ca_certificate" {
 output "admin_host" {
   description = "The `host` in the `azurerm_kubernetes_cluster`'s `kube_admin_config` block. The Kubernetes cluster server host."
   sensitive   = true
-  value       = try(azurerm_kubernetes_cluster.main.kube_admin_config[0].host, "")
+  value       = module.aks.admin_host
 }
 
 output "admin_password" {
   description = "The `password` in the `azurerm_kubernetes_cluster`'s `kube_admin_config` block. A password or token used to authenticate to the Kubernetes cluster."
   sensitive   = true
-  value       = try(azurerm_kubernetes_cluster.main.kube_admin_config[0].password, "")
+  value       = module.aks.admin_password
 }
 
 output "admin_username" {
   description = "The `username` in the `azurerm_kubernetes_cluster`'s `kube_admin_config` block. A username used to authenticate to the Kubernetes cluster."
   sensitive   = true
-  value       = try(azurerm_kubernetes_cluster.main.kube_admin_config[0].username, "")
+  value       = module.aks.admin_username
 }
 
 output "host" {
