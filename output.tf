@@ -80,30 +80,6 @@ output "password" {
   value       = module.aks.client_certificate
 }
 
-output "client_key" {
-  description = "The `client_key` in the `azurerm_kubernetes_cluster`'s `kube_config` block. Base64 encoded private key used by clients to authenticate to the Kubernetes cluster."
-  sensitive   = true
-  value       = module.aks.client_key
-}
-
-output "cluster_ca_certificate" {
-  description = "The `cluster_ca_certificate` in the `azurerm_kubernetes_cluster`'s `kube_config` block. Base64 encoded public CA certificate used as the root of trust for the Kubernetes cluster."
-  sensitive   = true
-  value       = module.aks.cluster_ca_certificate
-}
-
-output "username" {
-  description = "The `username` in the `azurerm_kubernetes_cluster`'s `kube_config` block. A username used to authenticate to the Kubernetes cluster."
-  sensitive   = true
-  value       = module.aks.username
-}
-
-output "password" {
-  description = "The `password` in the `azurerm_kubernetes_cluster`'s `kube_config` block. A password or token used to authenticate to the Kubernetes cluster."
-  sensitive   = true
-  value       = module.aks.password
-}
-
 output "resource_group_name" {
   value = var.resource_group_name
 }
