@@ -124,7 +124,7 @@ variable "admins_group_name" {
 
 variable "private_cluster_enabled" {
   description = "Create private cluster"
-  default     = true
+  default     = false
 }
 
 variable "agents_labels" {
@@ -157,7 +157,6 @@ variable "node_pools" {
     node_count          = optional(number)
     min_count           = optional(number)
     max_count           = optional(number)
-    node_count          = optional(number)
     node_labels         = optional(map(string))
     node_tags           = optional(map(string))
   }))
