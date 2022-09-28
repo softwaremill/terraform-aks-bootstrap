@@ -20,6 +20,7 @@ module "aks" {
   kubernetes_version             = "1.24.3"
   orchestrator_version           = "1.24.3"
   use_cluster_admins_group       = false
+  private_cluster_enabled        = true
   agents_labels = {
     "node-group" = "controllers"
   }
@@ -30,8 +31,8 @@ module "aks" {
   node_pools = {
     "queues" = {
       enable_auto_scaling = true
-      agents_min_count    = 1
-      agents_max_count    = 3
+      min_count    = 1
+      max_count    = 3
       vm_size             = "standard_d4s_v3"
       node_labels = {
         "node-group" = "queues"
