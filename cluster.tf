@@ -5,7 +5,7 @@ resource "azurerm_resource_group" "cluster" {
 
 module "aks" {
   source                          = "Azure/aks/azurerm"
-  version                         = "~> 6.4"
+  version                         = "~> 5.0"
   resource_group_name             = azurerm_resource_group.cluster.name
   client_id                       = ""
   client_secret                   = ""
