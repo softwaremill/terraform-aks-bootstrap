@@ -8,6 +8,11 @@ variable "resource_group_name" {
   description = "Resource group name"
 }
 
+variable "use_for_each" {
+  type        = bool
+  description = "Use for_each instead of count to create multiple resource instances."
+}
+
 variable "prefix" {
   type        = string
   description = "The prefix for the resources created in the specified Azure Resource Group"
