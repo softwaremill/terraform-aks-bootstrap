@@ -2,7 +2,6 @@ include "root" {
   path = find_in_parent_folders()
 }
 inputs = {
-  source                         = "../../"
   cluster_name                   = "Aks"
   registry_name                  = "AksSoftwareMillRegistry"
   prefix                         = "test"
@@ -24,6 +23,7 @@ inputs = {
   kubernetes_version             = "1.24.3"
   orchestrator_version           = "1.24.3"
   use_cluster_admins_group       = false
+  use_for_each                   = true
   agents_labels = {
     "node-group" = "controllers"
   }

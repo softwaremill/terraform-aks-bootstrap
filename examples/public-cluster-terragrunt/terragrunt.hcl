@@ -3,7 +3,7 @@ generate "versions" {
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 terraform {
-  required_version = "~> 1.1.0"
+  required_version = ">=1.3"
 }
 EOF
 }
@@ -19,5 +19,5 @@ EOF
 }
 
 terraform {
-  source = "git::git@github.com:softwaremill/terraform-aks-bootstrap.git"
+  source = "git::git@github.com:softwaremill/terraform-aks-bootstrap.git//."
 }
