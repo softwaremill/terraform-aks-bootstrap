@@ -28,6 +28,7 @@ module "aks" {
   kubernetes_version             = "1.22.2"
   orchestrator_version           = "1.22.2"
   use_cluster_admins_group       = true
+  use_for_each                   = true
 }
 ```
 
@@ -66,8 +67,8 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aks"></a> [aks](#module\_aks) | Azure/aks/azurerm | n/a |
-| <a name="module_network"></a> [network](#module\_network) | Azure/network/azurerm | n/a |
+| <a name="module_aks"></a> [aks](#module\_aks) | Azure/aks/azurerm | 6.4 |
+| <a name="module_network"></a> [network](#module\_network) | Azure/network/azurerm | 5.0 |
 
 ## Resources
 
@@ -112,6 +113,7 @@ No requirements.
 | <a name="input_subnet_names"></a> [subnet\_names](#input\_subnet\_names) | A list of public subnets inside the vNet. | `list(string)` | n/a | yes |
 | <a name="input_subnet_prefixes"></a> [subnet\_prefixes](#input\_subnet\_prefixes) | The address prefix to use for the subnet. | `list(string)` | n/a | yes |
 | <a name="input_use_cluster_admins_group"></a> [use\_cluster\_admins\_group](#input\_use\_cluster\_admins\_group) | Enable if group AKS-cluster-admins is created | `bool` | n/a | yes |
+| <a name="input_use_for_each"></a> [use\_for\_each](#input\_use\_cluster\_admins\_group) | Use `for_each` instead of `count` to create multiple resource instances. | `bool` | n/a | yes |
 
 ## Outputs
 
