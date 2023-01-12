@@ -61,7 +61,7 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 2.31.0 |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.27.0, < 4.0.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.38.0 |
 
 ## Modules
 
@@ -96,12 +96,14 @@ No requirements.
 | <a name="input_agents_tags"></a> [agents\_tags](#input\_agents\_tags) | (Optional) A mapping of tags to assign to the Node Pool. | `map(string)` | <pre>{<br>  "Agent": "defaultnodepoolagent"<br>}</pre> | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Cluster name | `string` | n/a | yes |
 | <a name="input_cluster_sku_tier"></a> [cluster\_sku\_tier](#input\_cluster\_sku\_tier) | Description: The SKU Tier that should be used for this Kubernetes Cluster. Possible values are Free and Paid | `string` | `"Paid"` | no |
+| <a name="input_cluster_tags"></a> [cluster\_tags](#input\_cluster\_tags) | (Optional) A mapping of tags to assign to the cluster resources. | `map(string)` | `{}` | no |
 | <a name="input_enable_auto_scaling"></a> [enable\_auto\_scaling](#input\_enable\_auto\_scaling) | Enable node pool autoscaling | `bool` | `false` | no |
 | <a name="input_enable_host_encryption"></a> [enable\_host\_encryption](#input\_enable\_host\_encryption) | Enable Host Encryption for default node pool. Encryption at host feature must be enabled on the subscription: https://docs.microsoft.com/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli | `bool` | `false` | no |
 | <a name="input_kubernetes_version"></a> [kubernetes\_version](#input\_kubernetes\_version) | Specify which Kubernetes release to use. | `string` | `"1.24.3"` | no |
 | <a name="input_net_profile_dns_service_ip"></a> [net\_profile\_dns\_service\_ip](#input\_net\_profile\_dns\_service\_ip) | IP address within the Kubernetes service address range that will be used by cluster service discovery (kube-dns). Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_net_profile_docker_bridge_cidr"></a> [net\_profile\_docker\_bridge\_cidr](#input\_net\_profile\_docker\_bridge\_cidr) | IP address (in CIDR notation) used as the Docker bridge IP address on nodes. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_net_profile_service_cidr"></a> [net\_profile\_service\_cidr](#input\_net\_profile\_service\_cidr) | The Network Range used by the Kubernetes service. Changing this forces a new resource to be created. | `string` | n/a | yes |
+| <a name="input_network_tags"></a> [network\_tags](#input\_network\_tags) | (Optional) A mapping of tags to assign to the network. | `map(string)` | `{}` | no |
 | <a name="input_node_pools"></a> [node\_pools](#input\_node\_pools) | Manages Node Pools within a Kubernetes Cluster | <pre>map(object({<br>    vm_size             = string<br>    enable_auto_scaling = bool<br>    node_count          = optional(number)<br>    min_count           = optional(number)<br>    max_count           = optional(number)<br>    node_labels         = optional(map(string))<br>    node_tags           = optional(map(string))<br>  }))</pre> | `{}` | no |
 | <a name="input_orchestrator_version"></a> [orchestrator\_version](#input\_orchestrator\_version) | Specify which Kubernetes release to use for the orchestration layer. | `string` | `"1.24.3"` | no |
 | <a name="input_os_disk_size_gb"></a> [os\_disk\_size\_gb](#input\_os\_disk\_size\_gb) | Disk size of nodes in GBs. | `number` | `50` | no |
@@ -110,6 +112,7 @@ No requirements.
 | <a name="input_registry_name"></a> [registry\_name](#input\_registry\_name) | Override default name for azure container registry | `string` | `null` | no |
 | <a name="input_registry_sku_tier"></a> [registry\_sku\_tier](#input\_registry\_sku\_tier) | Basic | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group name | `string` | n/a | yes |
+| <a name="input_resource_group_tags"></a> [resource\_group\_tags](#input\_resource\_group\_tags) | (Optional) A mapping of tags to assign to the resource group. | `map(string)` | `{}` | no |
 | <a name="input_subnet_names"></a> [subnet\_names](#input\_subnet\_names) | A list of public subnets inside the vNet. | `list(string)` | n/a | yes |
 | <a name="input_subnet_prefixes"></a> [subnet\_prefixes](#input\_subnet\_prefixes) | The address prefix to use for the subnet. | `list(string)` | n/a | yes |
 | <a name="input_use_cluster_admins_group"></a> [use\_cluster\_admins\_group](#input\_use\_cluster\_admins\_group) | Enable if group AKS-cluster-admins is created | `bool` | n/a | yes |
