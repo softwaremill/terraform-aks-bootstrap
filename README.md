@@ -61,13 +61,13 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 2.31.0 |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.37.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.27.0, < 4.0.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aks"></a> [aks](#module\_aks) | Azure/aks/azurerm | ~> 5.0 |
+| <a name="module_aks"></a> [aks](#module\_aks) | Azure/aks/azurerm | 6.5.0 |
 | <a name="module_network"></a> [network](#module\_network) | Azure/network/azurerm | ~> 5.0 |
 
 ## Resources
