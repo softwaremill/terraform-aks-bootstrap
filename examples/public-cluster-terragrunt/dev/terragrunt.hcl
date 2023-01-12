@@ -32,11 +32,23 @@ inputs = {
     "environment" = "dev"
   }
 
+  network_tags = {
+    "environment" = "dev"
+  }
+
+  cluster_tags = {
+    "environment" = "dev"
+  }
+
+  resource_group_tags = {
+    "environment" = "dev"
+  }
+
   node_pools = {
     "queues" = {
       enable_auto_scaling = true
-      min_count    = 1
-      max_count    = 3
+      min_count           = 1
+      max_count           = 3
       vm_size             = "standard_d4s_v3"
       node_labels = {
         "node-group" = "queues"

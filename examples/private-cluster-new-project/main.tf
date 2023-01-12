@@ -28,6 +28,17 @@ module "aks" {
   agents_tags = {
     "environment" = "dev"
   }
+  network_tags = {
+    "environment" = "dev"
+  }
+
+  cluster_tags = {
+    "environment" = "dev"
+  }
+
+  resource_group_tags = {
+    "environment" = "dev"
+  }
 
   node_pools = {
     "queues" = {

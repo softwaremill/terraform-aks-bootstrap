@@ -1,11 +1,12 @@
 resource "azurerm_resource_group" "cluster" {
   name     = var.resource_group_name
   location = "West Europe"
+  tags     = var.resource_group_tags
 }
 
 module "aks" {
   source                          = "Azure/aks/azurerm"
-  version                         = "~> 5.0"
+  version                         = "6.5.0"
   resource_group_name             = azurerm_resource_group.cluster.name
   client_id                       = ""
   client_secret                   = ""
@@ -33,6 +34,7 @@ module "aks" {
 
   agents_labels = var.agents_labels
   agents_tags   = var.agents_tags
+  tags          = var.cluster_tags
 
 
   network_policy                 = "azure"
