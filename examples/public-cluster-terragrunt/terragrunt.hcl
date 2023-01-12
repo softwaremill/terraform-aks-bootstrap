@@ -19,5 +19,5 @@ EOF
 }
 
 terraform {
-  source = "git::git@github.com:softwaremill/terraform-aks-bootstrap.git//."
+  source = "git::git@github.com:softwaremill/terraform-aks-bootstrap.git//?ref=v0.0.2"
 }
