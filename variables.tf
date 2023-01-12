@@ -167,3 +167,21 @@ variable "node_pools" {
   }))
   default = {}
 }
+
+variable "network_tags" {
+  description = "(Optional) A mapping of tags to assign to the network."
+  type        = map(string)
+  default     = {}
+}
+
+variable "cluster_tags" {
+  description = "(Optional) A mapping of tags to assign to the cluster resources."
+  type        = map(string)
+  default     = {}
+}
+
+variable "resource_group_tags" {
+  description = "(Optional) A mapping of tags to assign to the resource group."
+  type        = map(string)
+  default     = {}
+}
